@@ -200,7 +200,7 @@ function pattern4(n) {
     pattern = "";
   }
 }
-pattern4(5);
+// pattern4(5);
 
 /*
 n = 7
@@ -214,3 +214,39 @@ n = 7
 0 1 0 1 0 1 0
 
 */
+
+function pattern5(n) {
+  let toggle = " 1";
+  for (let i = 0; i < n; i++) {
+    let pattern = "";
+
+    for (let j = 0; j < i + 1; j++) {
+      pattern += toggle;
+      if (toggle === " 1") {
+        toggle = " 0";
+      } else {
+        toggle = " 1";
+      }
+    }
+    console.log(pattern);
+    pattern = "";
+  }
+}
+// pattern5(5);
+
+// count digit in a number
+
+function countDigit(n) {
+  if (n === 0) {
+    console.log(1);
+    return;
+  }
+  let totalDigit = 0;
+  let result = Math.abs(n);
+  for (let i = 0; result > 0; i++) {
+    totalDigit = totalDigit + 1;
+    result = Math.round(result / 10);
+  }
+  console.log({ totalDigit });
+}
+countDigit(1);
